@@ -1,0 +1,14 @@
+<h2><%= @word.word %></h2>
+
+<% if @word.definitions.any? %>
+  <ul>
+  <% @word.definitions.each do |defi| %>
+  <li><%= @word.definitions.entry %></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>There are currently no definitions to display.</p>
+<% end %>
+
+<h4>Add a definition:</h4>
+

@@ -28,6 +28,6 @@ post('/words') do
 end
 
 get('/word/:id') do
-  @new_word = Word.find(params[:id].to_i())
-  erb(:word)
+  @word = Word.find(params[:id].to_i())
+  erb(:word_info)
 end
