@@ -32,10 +32,21 @@ get('/word/:id') do
   erb(:word_info)
 end
 
-delete('word/:id') do
+get('/word/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
+
+patch('/word/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update_word(params[:update_word])
+  @words = Word.all
+  erb(:word_definer)
+end
+
+delete('/word/:id') do
   @word = Word.find(params[:id].to_i())
   @word.delete()
-  @words = Words.all
   redirect to('/words')
 end
 

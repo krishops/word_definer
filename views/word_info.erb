@@ -1,11 +1,6 @@
 <h2><%= @word.word %></h2>
 
-Update word here
-<form action="/word/<%= @word.id() %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-
-  <button type="submit">Delete word</button>
-</form>
+<a href="/word/<%= @word.id %>/edit">Make changes to word</a>
 
 <% if @word.definitions.any? %>
   <ul>

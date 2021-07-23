@@ -27,11 +27,12 @@ This app is also available at HEROKU LINK HERE.
 
 Within the root directory, run the command `docker-compose run --rm web bundle exec rspec` to run the rspec tests of the project.
 Testing should output:
-**17 examples, 0 failures**  
+**19 examples, 1 failures**  
 
 ## Known Bugs
 
-THERE WILL BE BUGS!!!!
+App is unable to update or delete definitions of words.
+Integration test for deleting a word fails.
 
 ## License
 
