@@ -37,4 +37,8 @@ class Definition
     @@definitions[self.id] = Definition.new(self.entry, self.word_id, self.id)
   end
 
+  def word
+    Word.find(self.word_id)
+  end
+
 end
