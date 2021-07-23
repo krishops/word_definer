@@ -41,4 +41,6 @@ class Definition
     Word.find(self.word_id)
   end
 
+  
+
 end
