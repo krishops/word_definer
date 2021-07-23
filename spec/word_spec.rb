@@ -62,6 +62,16 @@ describe '#Word' do
     end
   end
 
-  
+  describe('definitions') do
+    it("returns a word's definitions") do
+      word = Word.new("Unicorn", nil)
+      word.save()
+      definition = Definition.new("Mythical creature", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("Something difficult to obtain", @word.id, nil)
+      definition2.save()
+      expect(word.definitions).to(eq([definition, definition2]))
+    end
+  end
 
 end
