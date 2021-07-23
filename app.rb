@@ -31,3 +31,11 @@ get('/word/:id') do
   @word = Word.find(params[:id].to_i())
   erb(:word_info)
 end
+
+post('/word/:id/definition') do
+  @words = Word.all()
+  @word = Word.find(params[:id].to_i())
+  new_definition = Definition.new(params[:new_definition], @word.id, nil)
+  new_definition.save()
+  erb(:word_info)
+end

@@ -3,7 +3,7 @@
 <% if @word.definitions.any? %>
   <ul>
   <% @word.definitions.each do |defi| %>
-  <li><%= @word.definitions.entry %></li>
+  <li><%= defi.entry %></li>
   <% end %>
 </ul>
 <% else %>
@@ -11,4 +11,12 @@
 <% end %>
 
 <h4>Add a definition:</h4>
+
+<form action="/word/<%= @word.id %>/definition" method="post">
+  <div class="form-group">
+    <label for="new_definition">Definition:</label>
+    <input id="d" name="new_definition" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add</button>
+</form>
 
