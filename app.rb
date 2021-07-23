@@ -39,3 +39,10 @@ post('/word/:id/definition') do
   new_definition.save()
   erb(:word_info)
 end
+
+get('/word/:id/definition/:entry_id') do
+  @word = Word.find(params[:id].to_i())
+  @definition = Definition.find(params[:entry_id].to_i())
+  erb(:edit_def)
+end
+  

@@ -1,9 +1,12 @@
 <h2><%= @word.word %></h2>
 
+Update word here
+Delete Button here
+
 <% if @word.definitions.any? %>
   <ul>
   <% @word.definitions.each do |defi| %>
-  <li><%= defi.entry %></li>
+  <li><a href="/word/<%= @word.id %>/definition/<%= defi.id %>"><%= defi.entry %></a></li>
   <% end %>
 </ul>
 <% else %>
@@ -19,4 +22,6 @@
   </div>
   <button type="submit" class="btn">Add</button>
 </form>
+
+<a href="/words">Return to word list</a>
 
