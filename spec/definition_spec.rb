@@ -59,7 +59,7 @@ describe '#Defintion' do
 
   describe('#word') do
     it("finds the word a definition belongs to") do
-      definition = Definition.new("Naima", @word.id, nil)
+      definition = Definition.new("Mythical creature", @word.id, nil)
       definition.save()
       expect(definition.word()).to(eq(@word))
     end
@@ -82,7 +82,7 @@ describe '#Defintion' do
       word2.save()
       definition = Definition.new("Mythical creature", @word.id, nil)
       definition.save()
-      definition2 = Definition.new("Something difficult to obtain", word2.id, nil)
+      definition2 = Definition.new("Winged horse", word2.id, nil)
       definition2.save()
       expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
     end

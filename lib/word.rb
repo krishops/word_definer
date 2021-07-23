@@ -35,7 +35,9 @@ class Word
     @word = word
   end
 
-  
+  def definitions
+    Definition.find_by_word(self.id)
+  end
 
   def delete
     @@words.delete(self.id)
