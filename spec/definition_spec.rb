@@ -48,11 +48,11 @@ describe '#Defintion' do
     end
   end
 
-  describe('#update') do
+  describe('#update_entry') do
     it("updates a definition entry by id") do
       definition = Definition.new("Mythical creature", @word.id, nil)
       definition.save()
-      definition.update("Something difficult to obtain", @word.id)
+      definition.update_entry("Something difficult to obtain", @word.id)
       expect(definition.entry).to(eq("Something difficult to obtain"))
     end
   end
