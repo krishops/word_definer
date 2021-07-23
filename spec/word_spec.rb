@@ -16,9 +16,9 @@ describe '#Word' do
 
   describe('#save') do
     it("saves a word") do
-      word = Word.new("Unicorn")
+      word = Word.new("Unicorn", nil)
       word.save()
-      word2 = Word.new("Pegasus")
+      word2 = Word.new("Pegasus", nil)
       word2.save()
       expect(Word.all).to(eq([word, word2]))
     end
@@ -26,8 +26,8 @@ describe '#Word' do
 
   describe('#==') do
     it("is the same word if it has the same attributes as another word") do
-      word = Word.new("Unicorn")
-      word2 = Word.new("Unicorn")
+      word = Word.new("Unicorn", nil)
+      word2 = Word.new("Unicorn", nil)
       expect(word).to(eq(word2))
     end
   end
