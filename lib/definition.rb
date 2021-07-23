@@ -23,8 +23,6 @@ class Definition
     @@definitions[self.id] = Definition.new(self.entry, self.word_id, self.id)
   end
 
-  
-
   def self.clear
     @@definitions = {}
   end

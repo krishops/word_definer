@@ -38,5 +38,18 @@ describe '#Defintion' do
     end
   end
 
+  describe('.find') do
+    it("finds a definition by id") do
+      definition = Definition.new("Mythical creature", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("Something difficult to obtain", @word.id, nil)
+      definition2.save()
+      expect(Definition.find(definition.id)).to(eq(definition))
+    end
+  end
+
+  
+
+
 
 end
