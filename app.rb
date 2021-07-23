@@ -10,6 +10,24 @@ get('/') do
   erb(:word_definer)
 end
 
+get('/words') do
+  @words = Word.all
+  erb(:word_definer)
+end
+
 get('/word/new') do
   erb(:new_word)
+end
+
+post('/words') do
+  word = params[:new_word]
+  new_word = Word.new(word, nil)
+  new_word.save()
+  @words = Word.all()
+  erb(:word_definer)
+end
+
+get('/word/:id') do
+  @new_word = Word.find(params[:id].to_i())
+  erb(:word)
 end
