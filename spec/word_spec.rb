@@ -32,6 +32,36 @@ describe '#Word' do
     end
   end
 
+  describe('.find') do
+    it("finds a word by id") do
+      word = Word.new("Unicorn", nil) 
+      word.save()
+      word2 = Word.new("Pegasus", nil)
+      word2.save()
+      expect(Word.find(word.id)).to(eq(word))
+    end
+  end
+
+  describe('#update_name') do
+    it("updates an word name by id") do
+      word = Word.new("Unicorn", nil)
+      word.save()
+      word.update_name("Mermaid")
+      expect(word.name).to(eq("Mermaid"))
+    end
+  end
+
+  describe('#delete') do
+    it("deletes an word by id") do
+      word = Word.new("Unicorn", nil)
+      word.save()
+      word2 = Word.new("Pegasus", nil)
+      word2.save()
+      word.delete()
+      expect(word.all).to(eq([word2]))
+    end
+  end
+
   
 
 end
