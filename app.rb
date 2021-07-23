@@ -32,6 +32,13 @@ get('/word/:id') do
   erb(:word_info)
 end
 
+delete('word/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  @words = Words.all
+  redirect to('/words')
+end
+
 post('/word/:id/definition') do
   @words = Word.all()
   @word = Word.find(params[:id].to_i())
@@ -44,5 +51,13 @@ get('/word/:id/definition/:entry_id') do
   @word = Word.find(params[:id].to_i())
   @definition = Definition.find(params[:entry_id].to_i())
   erb(:edit_def)
+end
+
+patch('word/:id/definition/:entry_id') do
+  @word = Word.find(params[:id].to_i())
+  @defintion = Definition.find(params[:entry_id].to_i())
+  definition.update_entry(params[:new_def], @word.id)
+  @definitions = Definition.all
+  redirect to('/word/:id')
 end
   
