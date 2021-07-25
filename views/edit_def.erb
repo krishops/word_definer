@@ -9,3 +9,11 @@
   <button type="submit" class="btn">Update</button>
 </form>
 
+<form action="/word/<%= @definition.word.id %>/definition/<%= @definition.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete Definition</button>
+</form>
+
+<a href="/word/<%= @word.id %>">Back to <%= @word.word %></a>
+

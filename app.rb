@@ -64,11 +64,22 @@ get('/word/:id/definition/:entry_id') do
   erb(:edit_def)
 end
 
-patch('word/:id/definition/:entry_id') do
+patch('/word/:id/definition/:entry_id') do
   @word = Word.find(params[:id].to_i())
-  @defintion = Definition.find(params[:entry_id].to_i())
-  definition.update_entry(params[:new_def], @word.id)
-  @definitions = Definition.all
-  redirect to('/word/:id')
+  @definition = Definition.find(params[:entry_id].to_i())
+  @definition.update_entry(params[:new_def], @word.id)
+  erb(:word_info)
 end
-  
+
+delete('/word/:id/definition/:entry_id') do
+  @word = Word.find(params[:id].to_i())
+  @definition = Definition.find(params[:entry_id].to_i())
+  @definition.delete()
+  erb(:word_info)
+end
+
+get('/word/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:word_info)
+end
+
