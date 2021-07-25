@@ -1,0 +1,22 @@
+<h2>Word List:</h2>
+
+<% if @words.any? %>
+  <% @words.each do |word| %>
+  <u><%= word.word %></u>
+    <% if word.definitions.any?%>
+      <% word.definitions.each do |defi|%>
+  <ul>
+  <li><%=defi.entry%></li>
+  </ul>
+  <% end %>
+  <% else %>
+  <p>There are currently no definitions to display.</p>
+  
+  <% end %>
+  <% end %>
+</ul>
+<% else %>
+  <p>There are currently no words to display.</p>
+<% end %>
+
+<a href="/words">Return to home page</a>

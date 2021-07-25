@@ -78,8 +78,10 @@ delete('/word/:id/definition/:entry_id') do
   erb(:word_info)
 end
 
-get('/word/:id') do
-  @word = Word.find(params[:id].to_i())
-  erb(:word_info)
+get('/allwords') do
+  @words = Word.all
+  
+  @definitions = Definition.all
+  erb(:all_words)
 end
 
