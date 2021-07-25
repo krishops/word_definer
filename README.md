@@ -6,10 +6,10 @@
 
 * _Ruby_
 * _Docker_
-* _rspec_
+* _RSpec_
 * _pry_
-* _sinatra_
-* _capybara_
+* _Sinatra_
+* _Capybara_
 
 ## Description
 
@@ -21,18 +21,17 @@ To use this project, you will first need to install [Docker](https://docs.docker
 
 You can now clone the project by running `git clone https://github.com/krishops/word_definer` in the terminal.
 
-This app is also available at HEROKU LINK HERE.
+This app is also available at https://shielded-plains-20120.herokuapp.com/.
 
 ## Project Testing
 
 Within the root directory, run the command `docker-compose run --rm web bundle exec rspec` to run the rspec tests of the project.
 Testing should output:
-**19 examples, 1 failures**  
+**21 examples, 0 failures**  
 
 ## Known Bugs
 
-App is unable to update or delete definitions of words.
-Integration test for deleting a word fails.
+There are no known bugs.
 
 ## License
 
