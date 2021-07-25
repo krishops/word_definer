@@ -7,7 +7,7 @@
   <% @word.definitions.each do |defi| %>
   <li><a href="/word/<%= @word.id %>/definition/<%= defi.id %>"><%= defi.entry %></a></li>
   <% end %>
-</ul>
+  </ul>
 <% else %>
   <p>There are currently no definitions to display.</p>
 <% end %>

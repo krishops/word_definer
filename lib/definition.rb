@@ -54,5 +54,4 @@ class Definition
   def delete
     @@definitions.delete(self.id)
   end
-
 end

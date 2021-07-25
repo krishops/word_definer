@@ -80,7 +80,6 @@ end
 
 get('/allwords') do
   @words = Word.all
-  
   @definitions = Definition.all
   erb(:all_words)
 end

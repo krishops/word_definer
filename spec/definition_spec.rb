@@ -87,5 +87,4 @@ describe '#Defintion' do
       expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
     end
   end
-
 end

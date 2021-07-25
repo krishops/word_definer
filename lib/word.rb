@@ -42,6 +42,4 @@ class Word
   def delete
     @@words.delete(self.id)
   end
-
-
 end

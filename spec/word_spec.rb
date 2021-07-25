@@ -75,5 +75,4 @@ describe '#Word' do
       expect(word.definitions).to(eq([definition, definition2]))
     end
   end
-
 end

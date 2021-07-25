@@ -5,16 +5,14 @@
   <u><%= word.word %></u>
     <% if word.definitions.any?%>
       <% word.definitions.each do |defi|%>
-  <ul>
-  <li><%=defi.entry%></li>
-  </ul>
+        <ul>
+        <li><%=defi.entry%></li>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>There are currently no definitions to display.</p>
+    <% end %>
   <% end %>
-  <% else %>
-  <p>There are currently no definitions to display.</p>
-  
-  <% end %>
-  <% end %>
-</ul>
 <% else %>
   <p>There are currently no words to display.</p>
 <% end %>
